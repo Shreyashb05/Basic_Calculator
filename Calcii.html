@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calcii</title>
+	<style type="text/css">
+		.container{
+			height: 100vh;
+			width: 100%;
+			background-image: url(https://w0.peakpx.com/wallpaper/779/458/HD-wallpaper-question-mark.jpg);
+			background-size: cover;
+			
+
+			margin-left: 0px;
+			margin-top: 0px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.parent-div{
+			height: 600px;
+			width: 400px;
+			border-radius: 20px;
+			background-color: black;
+			box-shadow: 0px 0px 60px black;
+			position: fixed;
+		}
+		.output{
+			margin-top: 25px;
+			height: 65px;
+			width: 350px;
+			background-color: dimgrey;
+			text-align: right;
+			font-size: 30px;
+			padding: 10px;
+		}
+		input{
+			height: 75px;
+			width: 75px;
+			margin: 10px;
+			border-radius: 37.5px;
+			background-color: ghostwhite;
+			border: none;
+			color: black;
+			font-family: Arial Black;
+			font-size: 20px;
+		}
+		input[name="operator"]{
+			background-color: orange;
+		}
+		input:hover{
+			cursor: pointer;
+			box-shadow: 0px 0px 20px aqua;
+		}
+		.eql{
+			width: 170px;
+			background-color: blue !important;
+		}
+		input[name="ac"]{
+			background-color: orangered; !important;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+		<div class="parent-div">
+			<form>
+				<div class="data">
+					<input type="text" name="op" class="output" disabled>
+				</div>
+				<div>
+					<input type="button" name="ac" value="AC" onclick="op.value='' ">
+					<input type="button" name="c" value="C" onclick="op.value=op.value.slice(0,-1)">
+					<input type="button" name="operator" value="%" onclick="op.value+='%'">
+					<input type="button" name="operator" value="/" onclick="op.value+='/'">
+				</div>
+				<div>
+					<input type="button" name="num" value="9" onclick="op.value+='9'">
+					<input type="button" name="num" value="8" onclick="op.value+='8'">
+					<input type="button" name="num" value="7" onclick="op.value+='7'">
+					<input type="button" name="operator" value="X" onclick="op.value+='*'">
+				</div>
+				<div>
+					<input type="button" name="num" value="6" onclick="op.value+='6'">
+					<input type="button" name="num" value="5" onclick="op.value+='5'">
+					<input type="button" name="num" value="4" onclick="op.value+='4'">
+					<input type="button" name="operator" value="-" onclick="op.value+='-'">
+				</div>
+				<div>
+					<input type="button" name="num" value="3" onclick="op.value+='3'">
+					<input type="button" name="num" value="2" onclick="op.value+='2'">
+					<input type="button" name="num" value="1" onclick="op.value+='1'">
+					<input type="button" name="operator" value="+" onclick="op.value+='+'">
+				</div>
+				<div>
+					<input type="button" name="num" value="0" onclick="op.value+='0'">
+					<input type="button" name="" value="." onclick="op.value+='.'">
+					<input type="button" name="operator" value="=" onclick="op.value=eval(op.value)" class="eql">
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
